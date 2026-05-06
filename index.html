@@ -131,8 +131,12 @@ p {
 
 <!-- MUSIK -->
 <audio id="musik" loop>
-  <source src="musik.mp3">
+  <source src="musik.mp3" type="audio/mpeg">
 </audio>
+
+<button id="toggleBtn" onclick="toggleMusik()">
+  Switch Music 🎵
+</button>
 
 <!-- Tombol Floating Music Control -->
 <div style="position: fixed; top: 20px; right: 20px; z-index: 1000;">
