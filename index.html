@@ -436,6 +436,62 @@ function startLove(){
     document.body.appendChild(love);
     setTimeout(()=>love.remove(),6000);
   }
+  function pilih(jawaban){
+  const respon = document.getElementById("respon");
+
+  if(jawaban === "iya"){
+    respon.innerHTML = "Hehe... aku tau kok 😊💙";
+    startLoveExplosion();
+  }
+}
+
+function kaburBtn(btn){
+  const x = Math.random() * 200 - 100;
+  const y = Math.random() * 200 - 100;
+  btn.style.transform = `translate(${x}px, ${y}px)`;
+}
+  function startLoveExplosion(){
+  for(let i=0;i<50;i++){
+    let love = document.createElement("div");
+    love.innerText = "💙";
+    love.style.position = "fixed";
+    love.style.left = "50%";
+    love.style.top = "50%";
+    love.style.fontSize = "20px";
+    love.style.zIndex = "999";
+
+    let x = (Math.random()-0.5)*600;
+    let y = (Math.random()-0.5)*600;
+
+    love.style.transition = "1s";
+
+    document.body.appendChild(love);
+
+    setTimeout(()=>{
+      love.style.transform = `translate(${x}px, ${y}px)`;
+      love.style.opacity = "0";
+    }, 10);
+
+    setTimeout(()=>love.remove(),1000);
+  }
+}
+  function gantiMusikTerakhir(){
+  musik.pause();
+  musik.src = "musik2.mp3";
+  musik.play();
+}
+  function nextSlide(){
+  if(current < slides.length - 1){
+    current++;
+    showSlide(current);
+
+    // Kalau sudah di slide terakhir
+    if(current === slides.length - 1){
+      gantiMusikTerakhir();
+    }
+  }
+}
+  
 }
 
 /* AUTOPLAY */
@@ -445,3 +501,4 @@ document.body.addEventListener('click', () => {
 </script>
 </body>
 </html>
+
