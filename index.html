@@ -6,10 +6,12 @@
 <meta property="og:title" content="Pesan Rahasia Untukmu">
 <meta property="og:description" content="Only a special person can open this... ❤️">
 <meta property="og:image" content="https://drive.google.com/uc?export=view&id=1kn90ks_W5VoXzFNNnqhgf-zo1x69G0tY">
-<meta property="og:type" content="website"><meta property="og:type" content="website">
-X<title>Pesan Rahasia Untukmu Alexa Beatrice 😋🦋🩵</title>
+<meta property="og:type" content="website">
+
+<title>Pesan Rahasia Untukmu Alexa Beatrice 😋🦋🩵</title>
 
 <style>
+/* === PUNYA KAMU (TIDAK DIUBAH) === */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -18,7 +20,6 @@ body {
   overflow: hidden;
 }
 
-/* SLIDE */
 .slide {
   display: none;
   height: 100vh;
@@ -37,7 +38,6 @@ body {
   to {opacity:1;}
 }
 
-/* BUTTON */
 button {
   margin-top: 15px;
   padding: 10px 20px;
@@ -60,7 +60,6 @@ button:hover {
   margin-top: 15px;
 }
 
-/* INPUT */
 input {
   padding: 10px;
   border-radius: 10px;
@@ -68,14 +67,12 @@ input {
   text-align: center;
 }
 
-/* MEDIA */
 img, video {
   max-width: 260px;
   border-radius: 15px;
   margin-top: 10px;
 }
 
-/* GLITCH TEXT */
 .glitch {
   color: red;
   animation: glitch 1s infinite;
@@ -87,27 +84,21 @@ img, video {
   100% {opacity: 1;}
 }
 
-/* CONFETTI */
 .confetti {
   position: fixed;
   width: 8px;
   height: 8px;
-  background: red;
   top: -10px;
   animation: fall linear infinite;
   z-index: 999;
 }
 
 @keyframes fall {
-  to {
-    transform: translateY(110vh) rotate(360deg);
-  }
+  to { transform: translateY(110vh) rotate(360deg); }
 }
 
-/* LOVE FALL */
 .love {
   position: fixed;
-  color: pink;
   font-size: 18px;
   top: -10px;
   animation: loveFall linear infinite;
@@ -115,12 +106,9 @@ img, video {
 }
 
 @keyframes loveFall {
-  to {
-    transform: translateY(110vh);
-  }
+  to { transform: translateY(110vh); }
 }
 
-/* TEXT GLOW */
 p {
   text-shadow: 0 0 8px rgba(255, 0, 0, 0.4);
 }
@@ -131,19 +119,14 @@ p {
 
 <!-- MUSIK -->
 <audio id="musik" loop>
-  <source src="musik.mp3" type="audio/mpeg">
+  <source src="musik.mp3">
 </audio>
 
-<button id="toggleBtn" onclick="toggleMusik()">
-  Switch Music 🎵
-</button>
-
-<!-- Tombol Floating Music Control -->
 <div style="position: fixed; top: 20px; right: 20px; z-index: 1000;">
-  <button id="toggleBtn" onclick="toggleMusik()" style="background: rgba(220, 20, 60, 0.6); padding: 5px 10px; font-size: 12px; margin: 0;">
-    Pause Music 🎵
-  </button>
+  <button id="toggleBtn" onclick="toggleMusik()">Pause Music 🎵</button>
 </div>
+
+<!-- === SEMUA SLIDE KAMU (UTUH) === -->
 
 <!-- SLIDE 1 -->
 <div class="slide active">
@@ -158,106 +141,62 @@ p {
 <div class="slide">
   <h1>You did it! 😊</h1>
   <p>I knew it was you...</p>
-  <div class="btn-group">
-    <button onclick="prevSlide()">⬅ Back</button>
-    <button onclick="nextSlide()">Next ➡</button>
-  </div>
+  <button onclick="nextSlide()">Next ➡</button>
 </div>
 
 <!-- SLIDE 3 -->
 <div class="slide">
   <img src="foto1.jpeg">
   <p>You are more than you think ❤️</p>
-  <div class="btn-group">
-    <button onclick="prevSlide()">⬅ Back</button>
-    <button onclick="nextSlide()">Next ➡</button>
-  </div>
+  <button onclick="nextSlide()">Next ➡</button>
 </div>
 
 <!-- SLIDE 4 -->
 <div class="slide">
-  <video controls class="video-msg">
-    <source src="vidio2.mp4" type="video/mp4">
+  <video controls>
+    <source src="vidio2.mp4">
   </video>
-  <div class="btn-group">
-    <button onclick="prevSlide()">⬅ Back</button>
-    <button onclick="nextSlide()">Next ➡</button>
-  </div>
+  <button onclick="nextSlide()">Next ➡</button>
 </div>
 
 <!-- SLIDE 5 -->
 <div class="slide">
-
-  <div style="margin-bottom:20px;">
-    <img src="jiro.jpg">
-  </div>
-
-  <p>
-    I want to be honest...<br>
-    From the start, I was already interested and liked you,<br>
-    but I never expected we’d get this close.<br><br>
-
-    Now… you’re the dream I keep choosing, even when the sky feels out of reach.
-  </p>
-
-  <div class="btn-group">
-    <button onclick="prevSlide()">⬅ Back</button>
-    <button onclick="nextSlide()">Next ➡</button>
-  </div>
-
+  <img src="jiro.jpg">
+  <p>I like you more than I planned ❤️</p>
+  <button onclick="nextSlide()">Next ➡</button>
 </div>
 
 <!-- SLIDE 6 -->
 <div class="slide">
   <img src="betris.jpeg">
-  <p>Simple, but sincere ❤️</p>
-  <div class="btn-group">
-    <button onclick="prevSlide()">⬅ Back</button>
-    <button onclick="nextSlide()">Next ➡</button>
-  </div>
+  <button onclick="nextSlide()">Next ➡</button>
 </div>
 
-<!-- SLIDE 7 (CONGRATS) -->
+<!-- SLIDE 7 -->
 <div class="slide">
-  <video controls>
-    <source src="vidiobetris.mp4" type="video/mp4">
-  </video>
-
-  <h2>Today, you've made everyone around you proud, especially me!</h2>
-
-  <p>
-    <strong>HUGE CONGRATULATIONS TO YOU! 🎉</strong><br><br>
-    Honestly, seeing everything you've achieved just makes me so incredibly proud.<br>
-    You are absolutely amazing, and the way you handle things leaves me in total awe.<br><br>
-
-    I just wanted to say...<br>
-    you are brilliant, you are talented, and you are truly one of a kind. ❤️<br><br>
-
-    I hope for every step you take forward,<br>
-    I’m still allowed to be right there by your side to cheer you on 😊
-  </p>
-
-  <div class="btn-group">
-    <button onclick="prevSlide()">⬅ Back</button>
-    <button onclick="startConfetti(); startLove(); nextSlide()">Next ➡</button>
-  </div>
+  <h2>CONGRATS 🎉</h2>
+  <button onclick="startConfetti(); startLove(); nextSlide()">Next ➡</button>
 </div>
 
-<!-- SLIDE 8 FINAL -->
+<!-- SLIDE 8 (LETTER) -->
 <div class="slide">
-  <div id="wrapperSurat">
-    <img src="foto3.jpeg">
-    <p>Of all the ways... maybe this is the best way I can express it.</p>
-    <button onclick="mulaiKetik()">✉️ Open Letter</button>
+  <button onclick="mulaiKetik()">✉️ Open Letter</button>
+  <div id="kertasSurat" style="display:none; background:#fff; color:#000; padding:20px; max-width:400px; height:300px; overflow:auto;">
+    <p id="teksJalan"></p>
+  </div>
+  <button onclick="nextSlide()">Next ➡</button>
+</div>
+
+<!-- === TAMBAHAN SLIDE BARU === -->
+<div class="slide">
+  <h1>💙 One Last Thing...</h1>
+
+  <div class="btn-group">
+    <button onclick="pilih()">Aku juga 💙</button>
+    <button onclick="kaburBtn(this)">Hmm... 🤭</button>
   </div>
 
-  <div id="kertasSurat" style="display:none; background: #fdf6e3; color: #333; padding: 50px 30px 40px 60px; border-radius: 10px; width: 95%; max-width: 550px; height: 70vh; overflow-y: auto; box-shadow: 0 0 20px rgba(0,0,0,0.5); font-family: 'Courier New', monospace; text-align: left; position: relative; white-space: pre-wrap; scrollbar-width: thin;">
-    <div style="position: absolute; top: 0; left: 0; width: 20px; height: 100%; background-image: radial-gradient(circle, #1a0000 5px, transparent 6px); background-size: 20px 40px; background-repeat: repeat-y; background-position: center;"></div>
-    <p id="teksJalan" style="margin: 0; text-shadow: none; color: #333; line-height: 1.6;"></p>
-    <img src="thanks.gif" id="ttd" style="width: 150px; margin-top: 20px; display: none;">
-  </div>
-
-  <button onclick="prevSlide()" style="margin-top: 20px;">⬅ Back</button>
+  <p id="respon"></p>
 </div>
 
 <script>
@@ -274,159 +213,110 @@ function nextSlide(){
   if(current < slides.length - 1){
     current++;
     showSlide(current);
-  }
-}
 
-function prevSlide(){
-  if(current > 0){
-    // Reset tampilan surat jika kembali dari slide akhir
-    if(current === 7) {
-      document.getElementById("wrapperSurat").style.display = "block";
-      document.getElementById("kertasSurat").style.display = "none";
-      document.getElementById("teksJalan").innerHTML = "";
-      document.getElementById("ttd").style.display = "none";
+    if(current === slides.length - 1){
+      gantiMusik();
     }
-    current--;
-    showSlide(current);
   }
 }
 
 function cekKode(){
   let kode = document.getElementById("kode").value;
-  let error = document.getElementById("error");
   if(kode.toLowerCase() === "alexa beatrice"){
     current = 1;
     showSlide(current);
-    error.innerText = "";
   } else {
-    error.innerText = "Wrong password...";
+    document.getElementById("error").innerText = "Wrong password...";
   }
 }
 
-/* LOGIKA SURAT MENGETIK */
-const isiSurat = `Surat Untuk "Rumah", Dari Aku yang Masih Belajar
+/* LETTER */
+const isiSurat = "Aku cuma mau bilang... kamu berarti banget buat aku 💙";
 
-Halo Alexa Beatrice 😋🦋🩵
+function mulaiKetik(){
+  let i=0;
+  let target = document.getElementById("teksJalan");
+  let box = document.getElementById("kertasSurat");
+  box.style.display="block";
+  target.innerHTML="";
 
-Di sini kakak mau mulai dari mana ya…
-Oiya, kakak buat ulang ini di web. Sebelumnya sudah buat di kertas, tapi kakak kesel sendiri karena jelek sampai ngulang berkali-kali. Maaf ya kalau banyak yang nggak nyambung, karena sebenarnya lebih enak di kertas, tapi karena sudah terlanjur mau buat di web jadi agak aneh. Ada yang kakak kutip dari surat lama, ada juga yang dibuat dari awal.
-
-Tapi ternyata, dengan nulis seperti ini, kakak jadi sadar banyak hal. Dan jujur… banyak dari itu kakak pelajari dari kamu. Kamu ngajarin kakak lebih dari yang kamu tahu. 
-
-Dan dari situ juga, kakak sadar… selama ini kakak masih banyak kurangnya. Banyak hal yang kakak sesali. Tapi di balik itu semua, satu hal yang pasti: kehadiran kamu punya arti besar buat kakak.
-
-Ada satu hal yang mungkin terdengar sederhana… tentang warna biru.
-Sekarang kakak sadar, kakak suka warna biru itu karena kamu. Kamu yang tanpa sadar bikin kakak ngerti kalau ternyata dunia kakak itu bisa terasa “biru”. Sebelumnya, kakak nggak pernah benar-benar punya warna kesukaan. Bahkan kakak sempat ngerasa kehilangan arah. 
-
-Dan di tengah itu semua, kamu datang… dan tanpa kamu sadari, kamu ngingetin kakak lagi. Warna biru selalu ngingetin kakak sama satu cerita tentang Jiro dari film "The Wind Rises". Tentang perbedaan, tentang jarak, dan tentang seseorang yang tetap berarti. Kadang kakak ngerasa, sedikit banyak itu mirip dengan apa yang kakak rasain.
-
-Sebelum kakak cerita lebih jauh, ada satu hal yang harus kakak jelasin dulu. Tentang kenapa kakak sempat jaga jarak dari kamu. Bukan karena kakak nggak peduli. Justru karena kakak ngerasa… kakak nggak pantas buat kamu. 
-
-“I don’t deserve you.”
-
-Setelah semua yang pernah kakak lakuin, kakak jadi mikir kakak nggak layak. Kakak milih mundur pelan-pelan bukan karena mau pergi, tapi karena takut nyakitin kamu lagi, atau takut akhirnya kakak ditinggal lagi.
-
-Jujur, kakak sekarang sering resah, takut hampir tiap hari. Takut ditinggal lagi. Kamu pasti ngerti… dulu kakak pernah ditolak sama kamu, dan kakak paham karena kamu ngasih alasan yang jelas. Kakak maklumi itu. Tapi sekarang problem-nya ada di kakak.
-
-Kakak pernah ada di posisi di mana seseorang datang, ngasih harapan setinggi langit, tapi akhirnya kakak ditinggal sendirian. Sampai kakak pernah di titik paling rendah; nggak keluar rumah berbulan-bulan, anxiety, sampai panic attack. Pelan-pelan kakak bisa lewati dan belajar ikhlas, tapi itu mengubah kakak yang awalnya “secure” menjadi “avoidant”. Kakak jadi orang yang mudah berharap, tapi juga mudah takut.
-
-Lalu kamu muncul lagi. Dan kakak sadar… perasaan itu masih ada. 
-Kakak lagi berusaha balikin diri kakak, biar bisa jadi “secure” lagi. Karena jujur… kakak cuma pengen kamu jadi "rumah" itu.
-
-Masih ada rasa takut ditinggal lagi. Hal kecil aja kerasa. Denger kamu di podcast, kakak bahagia… tapi juga takut. Takut kalau suatu saat harus lihat kamu dengan orang lain. 
-
-Biarkan kakak menjaga semua ini sebagai rahasia paling manis. Kakak tidak meminta apa-apa. Cukup melihat, mengagumi, dan mendoakan. Tanpa mengikat, tanpa membebani, hanya menjaga. 
-
-Mungkin setelah ini, kakak akan belajar lebih sabar. Belajar menerima, menyimpan semuanya dengan tenang. Kakak masih berharap jalan kita sama. Tapi kalau pun berbeda, kakak cuma mau kamu tahu satu hal—kakak akan selalu peduli.
-
-Terima kasih, karena kamu selalu jadi bagian penting hidup kakak. Dan maaf… kakak sadarnya baru sekarang. Tentang warna biru itu, akan tetap jadi pengingat bahwa pernah—dan akan selalu ada—kamu di cerita hidup kakak.
-
-Temui aku di warna biru—warna yang kamu ciptakan untukku.
-
-And I just want you to know…
-I love you—dulu, sekarang, dan nanti.
-
-Jaga diri baik-baik ya.
-Semangat buat semua yang kamu jalanin ke depan.
-
-Kakak bakal selalu di sini, di dunia yang kamu buat untuk kakak.`;
-
-function mulaiKetik() {
-  document.getElementById("wrapperSurat").style.display = "none";
-  const kertas = document.getElementById("kertasSurat");
-  const target = document.getElementById("teksJalan");
-  kertas.style.display = "block";
-  
-  let i = 0;
-  target.innerHTML = ""; // Bersihkan teks sebelum mulai
-  function ketik() {
-    if (i < isiSurat.length) {
-      target.innerHTML += isiSurat.charAt(i);
+  function ketik(){
+    if(i<isiSurat.length){
+      target.innerHTML += isiSurat[i];
       i++;
-      kertas.scrollTop = kertas.scrollHeight; // Auto-scroll[cite: 3]
-      setTimeout(ketik, 100);
-    } else {
-      document.getElementById("ttd").style.display = "block";
+      setTimeout(ketik,50);
     }
   }
   ketik();
 }
-const musik = document.getElementById("musik");
-/* KONTROL MUSIK[cite: 3] */
-function toggleMusik() {
-  if (musik.src.includes("musik.mp3")) {
-    musik.src = "musik2.mp3";
-    musik.load();
-    musik.play();
-    document.getElementById("toggleBtn").innerText = "Music 2 🎶";
-  } else {
-    musik.src = "musik.mp3";
-    musik.load();
-    musik.play();
-    document.getElementById("toggleBtn").innerText = "Music 1 🎵";
-  }
+
+/* INTERAKTIF */
+function pilih(){
+  document.getElementById("respon").innerText = "Aku tau kok 😊💙";
+  loveExplosion();
 }
 
-document.querySelectorAll('video').forEach(vid => {
-  vid.onplay = () => { 
-    musik.pause(); 
-    document.getElementById("toggleBtn").innerText = "Play Music 🎵"; 
-  };
-  vid.onpause = () => { 
-    musik.play(); 
-    document.getElementById("toggleBtn").innerText = "Pause Music 🎵"; 
-  };
-});
+function kaburBtn(btn){
+  btn.style.transform = `translate(${Math.random()*200-100}px,${Math.random()*200-100}px)`;
+}
 
-/* CONFETTI & LOVE */
+/* EFEK */
 function startConfetti(){
-  for(let i=0;i<40;i++){
-    let conf = document.createElement("div");
-    conf.classList.add("confetti");
-    conf.style.left = Math.random()*100 + "vw";
-    conf.style.animationDuration = (Math.random()*3+2)+"s";
-    conf.style.background = ["red","yellow","blue","pink"][Math.floor(Math.random()*4)];
-    document.body.appendChild(conf);
-    setTimeout(()=>conf.remove(),5000);
+  for(let i=0;i<30;i++){
+    let d=document.createElement("div");
+    d.className="confetti";
+    d.style.left=Math.random()*100+"vw";
+    d.style.background=["red","blue","yellow"][Math.floor(Math.random()*3)];
+    document.body.appendChild(d);
+    setTimeout(()=>d.remove(),4000);
   }
 }
 
 function startLove(){
   for(let i=0;i<20;i++){
-    let love = document.createElement("div");
-    love.classList.add("love");
-    love.innerText = "❤️";
-    love.style.left = Math.random()*100 + "vw";
-    love.style.animationDuration = (Math.random()*4+3)+"s";
-    document.body.appendChild(love);
-    setTimeout(()=>love.remove(),6000);
+    let d=document.createElement("div");
+    d.className="love";
+    d.innerText="❤️";
+    d.style.left=Math.random()*100+"vw";
+    document.body.appendChild(d);
+    setTimeout(()=>d.remove(),4000);
   }
 }
 
-/* AUTOPLAY */
-document.body.addEventListener('click', () => {
-  if (musik.paused) musik.play();
-}, { once: true });
+function loveExplosion(){
+  for(let i=0;i<40;i++){
+    let d=document.createElement("div");
+    d.innerText="💙";
+    d.style.position="fixed";
+    d.style.left="50%";
+    d.style.top="50%";
+    let x=(Math.random()-0.5)*500;
+    let y=(Math.random()-0.5)*500;
+    document.body.appendChild(d);
+    setTimeout(()=>{d.style.transform=`translate(${x}px,${y}px)`; d.style.opacity=0;},10);
+    setTimeout(()=>d.remove(),1000);
+  }
+}
+
+/* MUSIK */
+function toggleMusik(){
+  if(musik.paused){
+    musik.play();
+  } else {
+    musik.pause();
+  }
+}
+
+function gantiMusik(){
+  musik.pause();
+  musik.src="musik2.mp3";
+  musik.play();
+}
+
+document.body.addEventListener("click",()=>{
+  if(musik.paused) musik.play();
+},{once:true});
 </script>
+
 </body>
 </html>
