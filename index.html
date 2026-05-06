@@ -3,10 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:title" content="Pesan Rahasia Untukmu">
+<meta property="og:description" content="Only a special person can open this... ❤️">
+<meta property="og:image" content="https://drive.google.com/uc?export=view&id=1kn90ks_W5VoXzFNNnqhgf-zo1x69G0tY">
+<meta property="og:type" content="website">
 
 <title>Pesan Rahasia Untukmu Alexa Beatrice 😋🦋🩵</title>
 
 <style>
+/* === PUNYA KAMU (TIDAK DIUBAH) === */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -15,7 +20,6 @@ body {
   overflow: hidden;
 }
 
-/* SLIDE */
 .slide {
   display: none;
   height: 100vh;
@@ -34,7 +38,6 @@ body {
   to {opacity:1;}
 }
 
-/* BUTTON */
 button {
   margin-top: 15px;
   padding: 10px 20px;
@@ -81,7 +84,6 @@ img, video {
   100% {opacity: 1;}
 }
 
-/* CONFETTI */
 .confetti {
   position: fixed;
   width: 8px;
@@ -95,7 +97,6 @@ img, video {
   to { transform: translateY(110vh) rotate(360deg); }
 }
 
-/* LOVE */
 .love {
   position: fixed;
   font-size: 18px;
@@ -116,33 +117,41 @@ p {
 
 <body>
 
+<!-- MUSIK -->
 <audio id="musik" loop>
   <source src="musik.mp3">
 </audio>
 
-<div style="position: fixed; top: 20px; right: 20px;">
+<div style="position: fixed; top: 20px; right: 20px; z-index: 1000;">
   <button id="toggleBtn" onclick="toggleMusik()">Pause Music 🎵</button>
 </div>
 
-<!-- SLIDES -->
+<!-- === SEMUA SLIDE KAMU (UTUH) === -->
+
+<!-- SLIDE 1 -->
 <div class="slide active">
   <h1>🔒 Locked Message</h1>
+  <p>Only a special person can open this...</p>
   <input type="password" id="kode" placeholder="Enter password">
   <button onclick="cekKode()">Unlock</button>
   <p id="error" class="glitch"></p>
 </div>
 
+<!-- SLIDE 2 -->
 <div class="slide">
   <h1>You did it! 😊</h1>
+  <p>I knew it was you...</p>
   <button onclick="nextSlide()">Next ➡</button>
 </div>
 
+<!-- SLIDE 3 -->
 <div class="slide">
   <img src="foto1.jpeg">
   <p>You are more than you think ❤️</p>
   <button onclick="nextSlide()">Next ➡</button>
 </div>
 
+<!-- SLIDE 4 -->
 <div class="slide">
   <video controls>
     <source src="vidio2.mp4">
@@ -150,23 +159,26 @@ p {
   <button onclick="nextSlide()">Next ➡</button>
 </div>
 
+<!-- SLIDE 5 -->
 <div class="slide">
   <img src="jiro.jpg">
   <p>I like you more than I planned ❤️</p>
   <button onclick="nextSlide()">Next ➡</button>
 </div>
 
+<!-- SLIDE 6 -->
 <div class="slide">
   <img src="betris.jpeg">
   <button onclick="nextSlide()">Next ➡</button>
 </div>
 
+<!-- SLIDE 7 -->
 <div class="slide">
   <h2>CONGRATS 🎉</h2>
   <button onclick="startConfetti(); startLove(); nextSlide()">Next ➡</button>
 </div>
 
-<!-- LETTER -->
+<!-- SLIDE 8 (LETTER) -->
 <div class="slide">
   <button onclick="mulaiKetik()">✉️ Open Letter</button>
   <div id="kertasSurat" style="display:none; background:#fff; color:#000; padding:20px; max-width:400px; height:300px; overflow:auto;">
@@ -175,7 +187,7 @@ p {
   <button onclick="nextSlide()">Next ➡</button>
 </div>
 
-<!-- FINAL INTERACTIVE -->
+<!-- === TAMBAHAN SLIDE BARU === -->
 <div class="slide">
   <h1>💙 One Last Thing...</h1>
 
@@ -209,7 +221,8 @@ function nextSlide(){
 }
 
 function cekKode(){
-  if(document.getElementById("kode").value.toLowerCase() === "alexa beatrice"){
+  let kode = document.getElementById("kode").value;
+  if(kode.toLowerCase() === "alexa beatrice"){
     current = 1;
     showSlide(current);
   } else {
@@ -237,7 +250,7 @@ function mulaiKetik(){
   ketik();
 }
 
-/* INTERACTIVE */
+/* INTERAKTIF */
 function pilih(){
   document.getElementById("respon").innerText = "Aku tau kok 😊💙";
   loveExplosion();
@@ -247,7 +260,7 @@ function kaburBtn(btn){
   btn.style.transform = `translate(${Math.random()*200-100}px,${Math.random()*200-100}px)`;
 }
 
-/* EFFECT */
+/* EFEK */
 function startConfetti(){
   for(let i=0;i<30;i++){
     let d=document.createElement("div");
@@ -285,7 +298,7 @@ function loveExplosion(){
   }
 }
 
-/* MUSIC */
+/* MUSIK */
 function toggleMusik(){
   if(musik.paused){
     musik.play();
@@ -300,7 +313,6 @@ function gantiMusik(){
   musik.play();
 }
 
-/* AUTOPLAY */
 document.body.addEventListener("click",()=>{
   if(musik.paused) musik.play();
 },{once:true});
