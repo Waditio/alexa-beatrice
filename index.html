@@ -256,6 +256,28 @@ p {
   <button onclick="prevSlide()" style="margin-top: 20px;">⬅ Back</button>
 </div>
 
+  <!-- SLIDE 9 (INTERACTIVE FINAL) -->
+<div class="slide">
+
+  <h1>💙 One Last Thing...</h1>
+
+  <p>Kamu mau pilih yang mana? 😊</p>
+
+  <div class="btn-group">
+    <button onclick="pilih('iya')">Aku juga 💙</button>
+    <button onclick="kaburBtn(this)">Hmm... 🤭</button>
+  </div>
+
+  <p id="respon" style="margin-top:20px;"></p>
+
+  <canvas id="canvasLove"></canvas>
+
+  <div class="btn-group">
+    <button onclick="prevSlide()">⬅ Back</button>
+  </div>
+
+</div>
+
 <script>
 let slides = document.querySelectorAll(".slide");
 let current = 0;
