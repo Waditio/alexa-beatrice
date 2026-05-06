@@ -355,16 +355,19 @@ function mulaiKetik() {
   
   let i = 0;
   target.innerHTML = ""; // Bersihkan teks sebelum mulai
-  function ketik() {
-    if (i < isiSurat.length) {
-      target.innerHTML += isiSurat.charAt(i);
-      i++;
-      kertas.scrollTop = kertas.scrollHeight; // Auto-scroll[cite: 3]
-      setTimeout(ketik, 100);
-    } else {
-      document.getElementById("ttd").style.display = "block";
-    }
+ function ketik() {
+  if (i < isiSurat.length) {
+    target.innerHTML += isiSurat.charAt(i);
+    i++;
+    kertas.scrollTop = kertas.scrollHeight;
+    setTimeout(ketik, 100);
+  } else {
+    document.getElementById("ttd").style.display = "block";
+
+    // 🔥 TARUH DI SINI
+    gantiMusik();
   }
+}
   ketik();
 }
 
@@ -415,7 +418,13 @@ function startLove(){
     setTimeout(()=>love.remove(),6000);
   }
 }
-
+/* 🔥 TAMBAH DI SINI */
+function gantiMusik(){
+  musik.pause();
+  musik.src = "musik2.mp3";
+  musik.load();
+  musik.play();
+}
 /* AUTOPLAY */
 document.body.addEventListener('click', () => {
   if (musik.paused) musik.play();
