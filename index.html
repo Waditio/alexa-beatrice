@@ -370,13 +370,16 @@ function mulaiKetik() {
 
 /* KONTROL MUSIK[cite: 3] */
 function toggleMusik() {
-  const btn = document.getElementById("toggleBtn");
-  if (musik.paused) {
+  if (musik.src.includes("musik.mp3")) {
+    musik.src = "musik2.mp3";
+    musik.load();
     musik.play();
-    btn.innerText = "Pause Music 🎵";
+    document.getElementById("toggleBtn").innerText = "Music 2 🎶";
   } else {
-    musik.pause();
-    btn.innerText = "Play Music 🎵";
+    musik.src = "musik.mp3";
+    musik.load();
+    musik.play();
+    document.getElementById("toggleBtn").innerText = "Music 1 🎵";
   }
 }
 
