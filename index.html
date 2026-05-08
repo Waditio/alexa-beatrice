@@ -26,15 +26,13 @@ body {
 /* SLIDE */
 .slide {
   display: none;
-  min-height: 100vh;
-  justify-content: flex-start;
+  height: 100vh;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   text-align: center;
-  padding: 100px 20px 50px;
+  padding: 20px;
   animation: fade 1s;
-  overflow-y: auto;
-  box-sizing: border-box;
 }
 
 .active { display: flex; }
@@ -131,11 +129,7 @@ img, video {
 p {
   text-shadow: 0 0 8px rgba(255, 0, 0, 0.4);
 }
-  body {
-  overflow-y: auto;
-}
 </style>
-  
 </head>
 
 <body>
@@ -257,24 +251,6 @@ Nadin 🎶
     <button onclick="nextSlide()">Next ➡</button>
   </div>
 </div>
-  <!-- SLIDE BARU -->
-<div class="slide">
-  <img src="foto2.jpeg">
-
-  <h2>The little things I remember 🌙</h2>
-
-  <p>
-    Your voice.<br>
-    The way you talk.<br>
-    The random things you say.<br>
-    Even the smallest things about you somehow stay in my mind.
-  </p>
-
-  <div class="btn-group">
-    <button onclick="prevSlide()">⬅ Back</button>
-    <button onclick="nextSlide()">Next ➡</button>
-  </div>
-</div>
 
 <!-- SLIDE 7 (CONGRATS) -->
 <div class="slide">
@@ -302,30 +278,6 @@ Nadin 🎶
   </div>
 </div>
 
-  <!-- SLIDE BARU -->
-<div class="slide">
-
-  <img src="album.jpeg">
-
-  <h2>If feelings had a soundtrack 🎧</h2>
-
-  <p>
-    Maybe all of this<br>
-    can only be explained through songs.
-  </p>
-
-  <p style="font-size:14px; opacity:0.8;">
-    "some songs just remind me of you."
-  </p>
-
-  <div class="btn-group">
-    <button onclick="prevSlide()">⬅ Back</button>
-    <button onclick="nextSlide()">Next ➡</button>
-  </div>
-
-</div>
-
-<!-- SLIDE 8 FINAL -->
 <!-- SLIDE 8 FINAL -->
 <div class="slide">
   <div id="wrapperSurat">
@@ -341,27 +293,6 @@ Nadin 🎶
   </div>
 
   <button onclick="prevSlide()" style="margin-top: 20px;">⬅ Back</button>
-</div>
-<div class="slide">
-
-  <img src="blue.jpeg">
-
-  <h2>Blue.</h2>
-
-  <p>
-    Before you,<br>
-    blue was just a color.<br><br>
-
-    Now it feels like a place,<br>
-    a memory,<br>
-    and somehow... home.
-  </p>
-
-  <div class="btn-group">
-    <button onclick="prevSlide()">⬅ Back</button>
-    <button onclick="nextSlide()">Next ➡</button>
-  </div>
-
 </div>
 
 <script>
@@ -479,7 +410,7 @@ function mulaiKetik() {
       target.innerHTML += isiSurat.charAt(i);
       i++;
       kertas.scrollTop = kertas.scrollHeight; // Auto-scroll[cite: 3]
-      setTimeout(ketik, 1);
+      setTimeout(ketik, 100);
     } else {
       document.getElementById("ttd").style.display = "block";
     }
