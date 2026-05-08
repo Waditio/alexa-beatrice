@@ -409,7 +409,7 @@ function mulaiKetik() {
       target.innerHTML += isiSurat.charAt(i);
       i++;
       kertas.scrollTop = kertas.scrollHeight; // Auto-scroll[cite: 3]
-      setTimeout(ketik, 100);
+      setTimeout(ketik, 15);
     } else {
       document.getElementById("ttd").style.display = "block";
     }
@@ -505,7 +505,8 @@ function startLove(){
     setTimeout(()=>love.remove(),6000);
   }
 }
-
+console.log("JS Loaded Successfully");
+  
 </script>
 </body>
 </html>
