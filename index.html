@@ -262,7 +262,11 @@ p {
 <script>
 let slides = document.querySelectorAll(".slide");
 let current = 0;
-const musik = document.getElementById("musik");
+  
+const musik1 = document.getElementById("musik1");
+const musik2 = document.getElementById("musik2");
+
+let musikAktif = musik1;
 
 function showSlide(i){
   slides.forEach(s => s.classList.remove("active"));
@@ -410,11 +414,12 @@ function switchMusik() {
 
 document.querySelectorAll('video').forEach(vid => {
   vid.onplay = () => { 
-    musik.pause(); 
+    musikAktif.pause(); 
     document.getElementById("toggleBtn").innerText = "Play Music 🎵"; 
   };
+
   vid.onpause = () => { 
-    musik.play(); 
+    musikAktif.play(); 
     document.getElementById("toggleBtn").innerText = "Pause Music 🎵"; 
   };
 });
@@ -446,7 +451,11 @@ function startLove(){
 
 /* AUTOPLAY */
 document.body.addEventListener('click', () => {
-  if (musik.paused) musik.play();
+
+  if (musikAktif.paused) {
+    musikAktif.play();
+  }
+
 }, { once: true });
 </script>
 </body>
