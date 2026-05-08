@@ -366,16 +366,44 @@ function mulaiKetik() {
   ketik();
 }
 
-/* KONTROL MUSIK[cite: 3] */
+const musik1 = document.getElementById("musik1");
+const musik2 = document.getElementById("musik2");
+
+let musikAktif = musik1;
+
+/* PLAY / PAUSE */
 function toggleMusik() {
   const btn = document.getElementById("toggleBtn");
-  if (musik.paused) {
-    musik.play();
+
+  if (musikAktif.paused) {
+    musikAktif.play();
     btn.innerText = "Pause Music 🎵";
   } else {
-    musik.pause();
+    musikAktif.pause();
     btn.innerText = "Play Music 🎵";
   }
+}
+
+/* GANTI LAGU */
+function switchMusik() {
+
+  // pause lagu sekarang
+  musikAktif.pause();
+  musikAktif.currentTime = 0;
+
+  // pindah ke lagu lain
+  if (musikAktif === musik1) {
+    musikAktif = musik2;
+  } else {
+    musikAktif = musik1;
+  }
+
+  // otomatis play lagu baru
+  musikAktif.play();
+
+  document.getElementById("toggleBtn").innerText =
+    "Pause Music 🎵";
+}
 }
 
 document.querySelectorAll('video').forEach(vid => {
