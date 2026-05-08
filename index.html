@@ -7,7 +7,7 @@
 <meta property="og:description" content="Only a special person can open this... ❤️">
 <meta property="og:image" content="https://drive.google.com/uc?export=view&id=1kn90ks_W5VoXzFNNnqhgf-zo1x69G0tY">
 <meta property="og:type" content="website"><meta property="og:type" content="website">
-X<title>Pesan Rahasia Untukmu Alexa Beatrice 😋🦋🩵</title>
+<title>Pesan Rahasia Untukmu Alexa Beatrice 😋🦋🩵</title>
 
 <style>
 body {
@@ -129,20 +129,49 @@ p {
 
 <body>
 
+<!-- AUDIO -->
 <audio id="musik1" loop>
-  <source src="musik.mp3">
+  <source src="musik1.mp3" type="audio/mpeg">
 </audio>
 
 <audio id="musik2" loop>
-  <source src="musik2.mp3">
+  <source src="musik2.mp3" type="audio/mpeg">
 </audio>
 
-<!-- Tombol Floating Music Control -->
-<div style="position: fixed; top: 20px; right: 20px; z-index: 1000;">
-  <button id="toggleBtn" onclick="toggleMusik()" style="background: rgba(220, 20, 60, 0.6); padding: 5px 10px; font-size: 12px; margin: 0;">
+<!-- FLOATING MUSIC CONTROL -->
+<div style="
+position: fixed;
+top: 20px;
+right: 20px;
+z-index: 1000;
+display: flex;
+gap: 10px;
+">
+
+  <button id="toggleBtn"
+    onclick="toggleMusik()"
+    style="
+    background: rgba(220,20,60,0.7);
+    padding: 8px 12px;
+    font-size: 12px;
+    margin: 0;
+    ">
     Pause Music 🎵
   </button>
+
+  <button onclick="switchMusik()"
+    style="
+    background: rgba(0,0,0,0.5);
+    padding: 8px 12px;
+    font-size: 12px;
+    margin: 0;
+    ">
+    Ganti Lagu 🔄
+  </button>
+
 </div>
+
+
 
 <!-- SLIDE 1 -->
 <div class="slide active">
@@ -295,13 +324,22 @@ function prevSlide(){
 }
 
 function cekKode(){
+
   let kode = document.getElementById("kode").value;
   let error = document.getElementById("error");
+
   if(kode.toLowerCase() === "alexa beatrice"){
+
     current = 1;
     showSlide(current);
+
     error.innerText = "";
+
+    // AUTO PLAY
+    musikAktif.play();
+
   } else {
+
     error.innerText = "Wrong password...";
   }
 }
@@ -378,34 +416,43 @@ const musik2 = document.getElementById("musik2");
 
 let musikAktif = musik1;
 
-/* PLAY / PAUSE */
+// ================= MUSIC CONTROL =================
+
+// PLAY / PAUSE
 function toggleMusik() {
+
   const btn = document.getElementById("toggleBtn");
 
   if (musikAktif.paused) {
+
     musikAktif.play();
     btn.innerText = "Pause Music 🎵";
+
   } else {
+
     musikAktif.pause();
     btn.innerText = "Play Music 🎵";
   }
 }
 
-/* GANTI LAGU */
+
+// SWITCH MUSIC
 function switchMusik() {
 
-  // pause lagu sekarang
   musikAktif.pause();
   musikAktif.currentTime = 0;
 
-  // pindah ke lagu lain
   if (musikAktif === musik1) {
+
     musikAktif = musik2;
+    alert("Now Playing: Arash Buana 🎶");
+
   } else {
+
     musikAktif = musik1;
+    alert("Now Playing: Nadin Amizah 🎶");
   }
 
-  // otomatis play lagu baru
   musikAktif.play();
 
   document.getElementById("toggleBtn").innerText =
@@ -413,15 +460,23 @@ function switchMusik() {
 }
 
 document.querySelectorAll('video').forEach(vid => {
-  vid.onplay = () => { 
-    musikAktif.pause(); 
-    document.getElementById("toggleBtn").innerText = "Play Music 🎵"; 
+
+  vid.onplay = () => {
+
+    musikAktif.pause();
+
+    document.getElementById("toggleBtn").innerText =
+      "Play Music 🎵";
   };
 
-  vid.onpause = () => { 
-    musikAktif.play(); 
-    document.getElementById("toggleBtn").innerText = "Pause Music 🎵"; 
+  vid.onpause = () => {
+
+    musikAktif.play();
+
+    document.getElementById("toggleBtn").innerText =
+      "Pause Music 🎵";
   };
+
 });
 
 /* CONFETTI & LOVE */
