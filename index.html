@@ -631,24 +631,24 @@ setInterval(() => {
 }, 300);
 
 
-// ROSE EFFECT
+// FLOWER EFFECT 🌹
 setInterval(() => {
 
-  let rose = document.createElement("div");
+  let flower = document.createElement("div");
 
-  rose.innerHTML = "🌹";
+  flower.innerHTML = "🌹";
 
-  rose.style.position = "fixed";
-  rose.style.left = Math.random() * 100 + "vw";
-  rose.style.top = "-20px";
-  rose.style.fontSize = "22px";
-  rose.style.animation = "loveFall 6s linear";
-  rose.style.zIndex = "999";
+  flower.style.position = "fixed";
+  flower.style.left = Math.random() * 100 + "vw";
+  flower.style.top = "-20px";
+  flower.style.fontSize = "24px";
+  flower.style.zIndex = "999";
+  flower.style.animation = "loveFall 6s linear";
 
-  document.body.appendChild(rose);
+  document.body.appendChild(flower);
 
   setTimeout(() => {
-    rose.remove();
+    flower.remove();
   }, 6000);
 
 }, 900);
