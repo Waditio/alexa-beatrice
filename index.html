@@ -26,13 +26,15 @@ body {
 /* SLIDE */
 .slide {
   display: none;
-  height: 100vh;
-  justify-content: center;
+  min-height: 100vh;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   text-align: center;
-  padding: 20px;
+  padding: 100px 20px 50px;
   animation: fade 1s;
+  overflow-y: auto;
+  box-sizing: border-box;
 }
 
 .active { display: flex; }
@@ -129,7 +131,11 @@ img, video {
 p {
   text-shadow: 0 0 8px rgba(255, 0, 0, 0.4);
 }
+  body {
+  overflow-y: auto;
+}
 </style>
+  
 </head>
 
 <body>
