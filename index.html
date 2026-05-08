@@ -34,6 +34,64 @@ body {
   padding: 20px;
   animation: fade 1s;
 }
+/* ROMANTIC SLIDE */
+.romantic-slide {
+  position: relative;
+  overflow: hidden;
+}
+
+.romantic-title {
+  font-size: 38px;
+  color: #9ecbff;
+  text-shadow:
+    0 0 10px #4da6ff,
+    0 0 20px #4da6ff;
+  animation: glowText 2s infinite alternate;
+}
+
+.romantic-text {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #ffffff;
+  opacity: 0.9;
+}
+
+@keyframes glowText {
+  from {
+    text-shadow:
+      0 0 10px #4da6ff,
+      0 0 20px #4da6ff;
+  }
+
+  to {
+    text-shadow:
+      0 0 20px #87cefa,
+      0 0 40px #87cefa;
+  }
+}
+
+/* BLUE PARTICLES */
+.blue-particle {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background: #6bbcff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #6bbcff;
+  animation: floatBlue linear infinite;
+}
+
+@keyframes floatBlue {
+  from {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(-10vh);
+    opacity: 1;
+  }
+}
 
 .active { display: flex; }
 
@@ -276,6 +334,27 @@ Nadin 🎶
     <button onclick="prevSlide()">⬅ Back</button>
     <button onclick="startConfetti(); startLove(); nextSlide()">Next ➡</button>
   </div>
+</div>
+
+  <!-- ROMANTIC TRANSITION SLIDE -->
+<div class="slide romantic-slide">
+
+  <h1 class="romantic-title">
+    Some feelings<br>
+    stay longer than words 💙
+  </h1>
+
+  <p class="romantic-text">
+    And maybe...<br>
+    this letter is my way<br>
+    of keeping them alive.
+  </p>
+
+  <div class="btn-group">
+    <button onclick="prevSlide()">⬅ Back</button>
+    <button onclick="nextSlide()">Open Letter 💌</button>
+  </div>
+
 </div>
 
 <!-- SLIDE 8 FINAL -->
@@ -530,6 +609,49 @@ musik2.onended = function () {
   document.getElementById("switchBtn").innerText =
     "Nadin 🎶";
 };
+
+// BLUE PARTICLES
+setInterval(() => {
+
+  let particle = document.createElement("div");
+
+  particle.classList.add("blue-particle");
+
+  particle.style.left = Math.random() * 100 + "vw";
+
+  particle.style.animationDuration =
+    (Math.random() * 4 + 3) + "s";
+
+  document.body.appendChild(particle);
+
+  setTimeout(() => {
+    particle.remove();
+  }, 7000);
+
+}, 300);
+
+
+// ROSE EFFECT
+setInterval(() => {
+
+  let rose = document.createElement("div");
+
+  rose.innerHTML = "🌹";
+
+  rose.style.position = "fixed";
+  rose.style.left = Math.random() * 100 + "vw";
+  rose.style.top = "-20px";
+  rose.style.fontSize = "22px";
+  rose.style.animation = "loveFall 6s linear";
+  rose.style.zIndex = "999";
+
+  document.body.appendChild(rose);
+
+  setTimeout(() => {
+    rose.remove();
+  }, 6000);
+
+}, 900);
 
 console.log("JS Loaded Successfully");
 
