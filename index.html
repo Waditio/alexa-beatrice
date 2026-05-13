@@ -244,8 +244,8 @@ p {
     Pause Music 🎵
   </button>
 
-  <button onclick="gantiMusik(1)">Music 1 🎵</button>
-  <button onclick="gantiMusik(2)">Music 2 🎶</button>
+  <button onclick="gantiMusik(1)">Nadin Amizah 🎵</button>
+  <button onclick="gantiMusik(2)">araash buana 🎶</button>
   <button onclick="gantiMusik(4)">Music 4 ✨</button>
   <button onclick="gantiMusik(5)">Music 5 🌙</button>
 
@@ -743,17 +743,17 @@ function toggleMusik() {
 
 
 // SWITCH MUSIC
-function gantiMusik(nomor){
+function ganti(nomor){
 
   musikAktif.pause();
   musikAktif.currentTime = 0;
 
   if(nomor === 1){
-    musikAktif = nadin amizah;
+    musikAktif = musik1;
   }
 
   if(nomor === 2){
-    musikAktif = arash;
+    musikAktif = musik2;
   }
 
   if(nomor === 4){
