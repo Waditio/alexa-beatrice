@@ -227,9 +227,6 @@ p {
   <source src="musik2.mp3" type="audio/mpeg">
 </audio>
 
-<audio id="musik3">
-  <source src="musik3.mp3" type="audio/mpeg">
-</audio>
 
 <audio id="musik4">
   <source src="musik4.mp3" type="audio/mpeg">
@@ -399,7 +396,6 @@ let current = 0;
   
 const musik1 = document.getElementById("musik1");
 const musik2 = document.getElementById("musik2");
-const musik3 = document.getElementById("musik3");
 const musik4 = document.getElementById("musik4");
 const musik5 = document.getElementById("musik5");
 
@@ -709,10 +705,6 @@ function gantiMusik(nomor){
     musikAktif = musik2;
   }
 
-  if(nomor === 3){
-    musikAktif = musik3;
-  }
-
   if(nomor === 4){
     musikAktif = musik4;
   }
@@ -784,20 +776,6 @@ musik1.onended = function () {
 
   musikAktif = musik2;
   musik2.play();
-
-};
-
-musik2.onended = function () {
-
-  musikAktif = musik3;
-  musik3.play();
-
-};
-
-musik3.onended = function () {
-
-  musikAktif = musik4;
-  musik4.play();
 
 };
 
