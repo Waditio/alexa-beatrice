@@ -188,6 +188,30 @@ img, video {
 p {
   text-shadow: 0 0 8px rgba(255, 0, 0, 0.4);
 }
+/* MUSIC BUTTON FIX */
+.music-control{
+  position: fixed;
+  top: 20px;
+  right: 20px;
+
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+
+  z-index: 1000;
+}
+
+.music-control button{
+  padding: 8px 12px !important;
+  font-size: 12px !important;
+
+  width: auto !important;
+  height: auto !important;
+
+  border-radius: 12px;
+
+  background: rgba(220,20,60,0.8);
+}
 </style>
 </head>
 
@@ -216,37 +240,18 @@ p {
 </audio>
 
 <!-- FLOATING MUSIC CONTROL -->
-<div style="
-position: fixed;
-top: 20px;
-right: 20px;
-z-index: 1000;
-display: flex;
-gap: 10px;
-">
+<div class="music-control">
 
   <button id="toggleBtn"
-    onclick="toggleMusik()"
-    style="
-    background: rgba(220,20,60,0.7);
-    padding: 8px 12px;
-    font-size: 12px;
-    margin: 0;
-    ">
+    onclick="toggleMusik()">
     Pause Music 🎵
   </button>
 
-<div style="
-display:flex;
-gap:10px;
-flex-wrap:wrap;
-">
-
-<button onclick="gantiMusik(1)">Music 1 🎵</button>
-<button onclick="gantiMusik(2)">Music 2 🎶</button>
-<button onclick="gantiMusik(3)">Music 3 💖</button>
-<button onclick="gantiMusik(4)">Music 4 ✨</button>
-<button onclick="gantiMusik(5)">Music 5 🌙</button>
+  <button onclick="gantiMusik(1)">Music 1 🎵</button>
+  <button onclick="gantiMusik(2)">Music 2 🎶</button>
+  <button onclick="gantiMusik(3)">Music 3 💖</button>
+  <button onclick="gantiMusik(4)">Music 4 ✨</button>
+  <button onclick="gantiMusik(5)">Music 5 🌙</button>
 
 </div>
 
