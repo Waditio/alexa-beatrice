@@ -203,6 +203,18 @@ p {
   <source src="musik2.mp3" type="audio/mpeg">
 </audio>
 
+<audio id="musik3">
+  <source src="musik3.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="musik4">
+  <source src="musik4.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="musik5">
+  <source src="musik5.mp3" type="audio/mpeg">
+</audio>
+
 <!-- FLOATING MUSIC CONTROL -->
 <div style="
 position: fixed;
@@ -224,16 +236,17 @@ gap: 10px;
     Pause Music 🎵
   </button>
 
-<button id="switchBtn"
-onclick="switchMusik()"
-style="
-background: rgba(0,0,0,0.5);
-padding: 8px 12px;
-font-size: 12px;
-margin: 0;
+<div style="
+display:flex;
+gap:10px;
+flex-wrap:wrap;
 ">
-Nadin 🎶
-</button>
+
+<button onclick="gantiMusik(1)">Music 1 🎵</button>
+<button onclick="gantiMusik(2)">Music 2 🎶</button>
+<button onclick="gantiMusik(3)">Music 3 💖</button>
+<button onclick="gantiMusik(4)">Music 4 ✨</button>
+<button onclick="gantiMusik(5)">Music 5 🌙</button>
 
 </div>
 
@@ -381,6 +394,9 @@ let current = 0;
   
 const musik1 = document.getElementById("musik1");
 const musik2 = document.getElementById("musik2");
+const musik3 = document.getElementById("musik3");
+const musik4 = document.getElementById("musik4");
+const musik5 = document.getElementById("musik5");
 
 let musikAktif = musik1;
 
@@ -622,20 +638,29 @@ function toggleMusik() {
 
 
 // SWITCH MUSIC
-function switchMusik() {
+function gantiMusik(nomor){
 
   musikAktif.pause();
   musikAktif.currentTime = 0;
 
-  if (musikAktif === musik1) {
-
-    musikAktif = musik2;
-    alert("Now Playing: Arash Buana 🎶");
-
-  } else {
-
+  if(nomor === 1){
     musikAktif = musik1;
-    alert("Now Playing: Nadin Amizah 🎶");
+  }
+
+  if(nomor === 2){
+    musikAktif = musik2;
+  }
+
+  if(nomor === 3){
+    musikAktif = musik3;
+  }
+
+  if(nomor === 4){
+    musikAktif = musik4;
+  }
+
+  if(nomor === 5){
+    musikAktif = musik5;
   }
 
   musikAktif.play();
@@ -693,24 +718,43 @@ function startLove(){
 
 // AUTO NEXT MUSIC
 // AUTO NEXT MUSIC
+// AUTO NEXT MUSIC
+
+// AUTO NEXT MUSIC
+
 musik1.onended = function () {
 
   musikAktif = musik2;
-
   musik2.play();
 
-  document.getElementById("switchBtn").innerText =
-    "Arash 🎶";
 };
 
 musik2.onended = function () {
 
-  musikAktif = musik1;
+  musikAktif = musik3;
+  musik3.play();
 
+};
+
+musik3.onended = function () {
+
+  musikAktif = musik4;
+  musik4.play();
+
+};
+
+musik4.onended = function () {
+
+  musikAktif = musik5;
+  musik5.play();
+
+};
+
+musik5.onended = function () {
+
+  musikAktif = musik1;
   musik1.play();
 
-  document.getElementById("switchBtn").innerText =
-    "Nadin 🎶";
 };
 
 // BLUE PARTICLES
