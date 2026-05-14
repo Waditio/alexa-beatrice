@@ -393,6 +393,8 @@ p {
 let slides = document.querySelectorAll(".slide");
 let current = 0;
   
+let suratSudahDibuka = false;
+  
 const musik1 = document.getElementById("musik1");
 const musik2 = document.getElementById("musik2");
 const musik4 = document.getElementById("musik4");
@@ -694,24 +696,39 @@ Dan maaf kalau banyak kalimat yang ga nyambung atau susah dipahami. Soalnya kk n
 `;
   
 function mulaiKetik() {
+
+  // kalau sudah pernah dibuka → langsung tampil
+  if(suratSudahDibuka){
+    document.getElementById("wrapperSurat").style.display = "none";
+    document.getElementById("kertasSurat").style.display = "block";
+    document.getElementById("ttd").style.display = "block";
+    return;
+  }
+
+  suratSudahDibuka = true;
+
   document.getElementById("wrapperSurat").style.display = "none";
   const kertas = document.getElementById("kertasSurat");
   const target = document.getElementById("teksJalan");
+
   kertas.style.display = "block";
-  
+
   let i = 0;
-  target.innerHTML = ""; // Bersihkan teks sebelum mulai
+  target.innerHTML = "";
+
   function ketik() {
     if (i < isiSurat.length) {
       target.innerHTML += isiSurat.charAt(i);
       i++;
-      kertas.scrollTop = kertas.scrollHeight; // Auto-scroll[cite: 3]
-      setTimeout(ketik, 100);
+      kertas.scrollTop = kertas.scrollHeight;
+      setTimeout(ketik, 30);
     } else {
       document.getElementById("ttd").style.display = "block";
     }
   }
+
   ketik();
+
 }
 
 
