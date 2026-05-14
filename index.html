@@ -244,7 +244,7 @@ p {
     Pause Music 🎵
   </button>
 
-  <button onclick="gantiMusik(1)">Nadin Amizah 🎵</button>
+  <button onclick="gantiMusik(1">Nadin Amizah 🎵</button>
   <button onclick="gantiMusik(2)">araash buana 🎶</button>
   <button onclick="gantiMusik(4)">Music 4 ✨</button>
   <button onclick="gantiMusik(5)">Music 5 🌙</button>
@@ -439,7 +439,9 @@ function cekKode(){
     error.innerText = "";
 
     // AUTO PLAY
-    musikAktif.play();
+    musikAktif.play().catch(err => {
+      console.log("Autoplay diblok browser:", err);
+    }); musikAktif.play();
 
   } else {
 
@@ -735,7 +737,7 @@ function toggleMusik() {
 
 
 // SWITCH MUSIC
-function ganti(nomor){
+function gantiMusik(nomor){
 
   musikAktif.pause();
   musikAktif.currentTime = 0;
@@ -816,26 +818,28 @@ function startLove(){
 // AUTO NEXT MUSIC
 
 musik1.onended = function () {
-
+  musik1.currentTime = 0;
   musikAktif = musik2;
   musik2.play();
+};
 
+musik2.onended = function () {
+  musik2.currentTime = 0;
+  musikAktif = musik4;
+  musik4.play();
 };
 
 musik4.onended = function () {
-
+  musik4.currentTime = 0;
   musikAktif = musik5;
   musik5.play();
-
 };
 
 musik5.onended = function () {
-
+  musik5.currentTime = 0;
   musikAktif = musik1;
   musik1.play();
-
 };
-
 // BLUE PARTICLES
 setInterval(() => {
 
