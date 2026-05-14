@@ -72,28 +72,34 @@ body {
 }
 
 /* BLUE PARTICLES */
-// BLUE PARTICLES
-setInterval(() => {
+.blue-particle {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background: #6bbcff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #6bbcff;
+  animation: floatBlue linear infinite;
+}
 
-  // hanya slide romantic & open letter
-  if(current !== 7 && current !== 8) return;
+@keyframes floatBlue {
+  from {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
 
-  let particle = document.createElement("div");
+  to {
+    transform: translateY(-10vh);
+    opacity: 1;
+  }
+}
 
-  particle.classList.add("blue-particle");
+.active { display: flex; }
 
-  particle.style.left = Math.random() * 100 + "vw";
-
-  particle.style.animationDuration =
-    (Math.random() * 4 + 3) + "s";
-
-  document.body.appendChild(particle);
-
-  setTimeout(() => {
-    particle.remove();
-  }, 7000);
-
-}, 300);
+@keyframes fade {
+  from {opacity:0;}
+  to {opacity:1;}
+}
 
 /* BUTTON */
 button {
@@ -163,29 +169,19 @@ img, video {
 }
 
 /* LOVE FALL */
-function startLove(){
+.love {
+  position: fixed;
+  color: pink;
+  font-size: 18px;
+  top: -10px;
+  animation: loveFall linear infinite;
+  z-index: 999;
+}
 
-  // hanya muncul di slide 7 & 8
-  if(current !== 7 && current !== 8) return;
-
-  for(let i=0;i<20;i++){
-
-    let love = document.createElement("div");
-
-    love.classList.add("love");
-
-    love.innerText = "🩵";
-
-    love.style.left = Math.random()*100 + "vw";
-
-    love.style.animationDuration =
-      (Math.random()*4+3)+"s";
-
-    document.body.appendChild(love);
-
-    setTimeout(()=>love.remove(),6000);
+@keyframes loveFall {
+  to {
+    transform: translateY(110vh);
   }
-
 }
 
 /* TEXT GLOW */
@@ -865,11 +861,7 @@ setInterval(() => {
 
 
 // FLOWER EFFECT 🌹
-// FLOWER EFFECT 🌹
 setInterval(() => {
-
-  // cuma muncul di romantic & open letter
-  if(current !== 7 && current !== 8) return;
 
   let flower = document.createElement("div");
 
