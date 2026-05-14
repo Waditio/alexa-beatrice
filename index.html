@@ -244,8 +244,8 @@ p {
     Pause Music 🎵
   </button>
 
-  <button onclick="gantiMusik(1">Nadin Amizah 🎵</button>
-  <button onclick="gantiMusik(2)">araash buana 🎶</button>
+  <button onclick="gantiMusik(1)">Musik 1 🎵</button>
+  <button onclick="gantiMusik(2)">Musik 2 🎶</button>
   <button onclick="gantiMusik(4)">Music 4 ✨</button>
   <button onclick="gantiMusik(5)">Music 5 🌙</button>
 
@@ -431,22 +431,21 @@ function cekKode(){
   let kode = document.getElementById("kode").value;
   let error = document.getElementById("error");
 
-  if(kode.toLowerCase() === "alexa beatrice"){
+ if(kode.toLowerCase() === "alexa beatrice"){
 
-    current = 1;
-    showSlide(current);
+  current = 1;
+  showSlide(current);
 
-    error.innerText = "";
+  error.innerText = "";
 
-    // AUTO PLAY
-    musikAktif.play().catch(err => {
-      console.log("Autoplay diblok browser:", err);
-    }); musikAktif.play();
+  musikAktif.play().catch(err => {
+    console.log("Autoplay diblok browser:", err);
+  });
 
-  } else {
+} else {
 
-    error.innerText = "Wrong password...";
-  }
+  error.innerText = "Wrong password...";
+}
 }
 
 /* LOGIKA SURAT MENGETIK */
